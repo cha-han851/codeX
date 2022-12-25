@@ -20,6 +20,7 @@ function loader(element) {
 }
 
 function typeText(element, text) {
+  // postToSlack(text);
   let index = 0;
 
   let inderval = setInterval(() => {
@@ -62,7 +63,7 @@ const handleSubmit = async(e) => {
   e.preventDefault();
 
   const data = new FormData(form);
-
+  // await postToSlack(chatStripe(false, data.get('prompt')));
   // user's chatstripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
   form.reset();
@@ -76,7 +77,8 @@ const handleSubmit = async(e) => {
 
   // fetch data from server -> bot's response
 
-  const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
+  // const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
+    const response = await fetch('http://localhost:5001', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

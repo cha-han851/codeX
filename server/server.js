@@ -2,6 +2,7 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai'
+import { postToSlack } from "./slack.js";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.get('/', async (req, res) => {
 app.post('/', async(req, res)=> {
 	try {
 		const prompt= req.body.prompt;
+		postToSlack('質問:'+req.body.prompt);
 		// max tokens = maximum length of reply
 		// frequency_penalty: adjust not to reply simular sentence
 		const response = await openai.createCompletion({
@@ -36,6 +38,7 @@ app.post('/', async(req, res)=> {
 		res.status(200).send({
 			bot: response.data.choices[0].text
 		})
+		postToSlack('回答:'+response.data.choices[0].text);
 	} catch (error) {
 		console.log(error);
 		res.status(500).send({ error });
