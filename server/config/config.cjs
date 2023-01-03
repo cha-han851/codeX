@@ -2,12 +2,12 @@ const fs = require('fs');
 
 module.exports = {
   development: {
-    username: 'root',
-    password: 'OTw#}mrq5Br-UR)',
-    database: 'knowledge_tank',
+    username: 'tomohiroiwasaki',
+    password: '',
+    database: 'knowledgetank',
     host: '127.0.0.1',
-    port: 3306,
-    dialect: 'mysql',
+    port: 5432,
+    dialect: 'postgres',
     dialectOptions: {
       bigNumberStrings: true
     }
