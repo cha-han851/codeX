@@ -16,7 +16,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import { authOptions } from '../../api/auth/[...nextauth]'
 import { unstable_getServerSession } from "next-auth/next"
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context:any) {
 	const session = await getSession(context);
 	const userId = session?.user.id
 	const id = context.query.id;

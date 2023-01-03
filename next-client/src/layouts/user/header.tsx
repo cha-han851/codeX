@@ -126,7 +126,7 @@ const Header: NextPage = () =>  {
 	}
 
 	const search = async(keyword: string) => {
-		const response = await fetch(process.env.PROD_APP_URL+'/api/v1/searchQuestions', {
+		const response = await fetch(process.env.APP_URL+'/api/v1/searchQuestions', {
 			method: 'POST',
 			headers: {
 			  'Content-Type': 'application/json'
