@@ -148,6 +148,11 @@ const Header: NextPage = () =>  {
 				<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>SmartBot AI</title>
+				<link
+					rel="canonical"
+					href={process.env.NEXT_PUBLIC_VERCEL_URL}
+					key="canonical"
+					/>
 			</Head>
 			<header>
 				<AppBar
