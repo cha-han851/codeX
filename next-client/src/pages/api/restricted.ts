@@ -1,5 +1,5 @@
 import { unstable_getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextAuth]"
+import { authOptions } from "./auth/[...nextauth]"
 
 
 export default async (req: any, res: any) => {
