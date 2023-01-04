@@ -13,7 +13,6 @@ import { useRouter } from 'next/router'
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import DoneIcon from '@mui/icons-material/Done';
-import { authOptions } from '../../api/auth/[...nextAuth]'
 import { unstable_getServerSession } from "next-auth/next"
 
 export async function getServerSideProps(context:any) {
