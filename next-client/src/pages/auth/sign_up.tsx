@@ -125,7 +125,7 @@ const SignUp: NextPage = () => {
 			password: password
 		}
 		// const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
-			const response = await fetch('http://localhost:5001/api/v1/sign_up', {
+			const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/sign_up', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -138,7 +138,7 @@ const SignUp: NextPage = () => {
 	const googlLogin = async () => {
 
 		// const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
-		const response = await fetch('http://localhost:5001/auth/google', {
+		const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/auth/google', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
@@ -150,7 +150,7 @@ const SignUp: NextPage = () => {
 	const isRegisterdUser = async () => {
 
 		// const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
-		const response = await fetch('http://localhost:5001/auth/google', {
+		const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/auth/google', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'

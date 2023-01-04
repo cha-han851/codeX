@@ -97,7 +97,7 @@ const Home: NextPage = () => {
     setInputData('');
 
     // const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
-    const response = await fetch('http://localhost:5001', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
   }
 
   const storeSolvedQuestion = async(data: Message) => {
-    const response = await fetch('http://localhost:5001/api/v1/storeSolvedQuestion', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeSolvedQuestion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
   }
 
   const storeFavoriteAnswer = async(data: Message[]) => {
-    const response = await fetch('http://localhost:5001/api/v1/storeFavoriteAnswer', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeFavoriteAnswer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -163,7 +163,7 @@ const Home: NextPage = () => {
   }
 
   const storeQuestion = async(data: Message[]) => {
-    const response = await fetch('http://localhost:5001/api/v1/storeQuestion', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeQuestion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
