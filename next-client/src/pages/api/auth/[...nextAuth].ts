@@ -20,7 +20,7 @@ export const authOptions = {
 		// Send properties to the client, like an access_token from a provider.
 		session.user.accessToken = token.accessToken;
 		session.user.id = token.sub;
-		await fetch(process.env.APP_URL+'/api/v1/confirm', {
+		await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/confirm', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

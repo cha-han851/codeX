@@ -20,7 +20,7 @@ export async function getServerSideProps(context:any) {
 	const session = await getSession(context);
 	const userId = session?.user.id
 
-	const response = await fetch(process.env.APP_URL+'/api/v1/getBookmarks', {
+	const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/getBookmarks', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ useEffect(()=>{
     setInputData('');
 
     // const response = await fetch('https://codex-chatgpt-0u3q.onrender.com', {
-    const response = await fetch(process.env.APP_URL+'', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -173,7 +173,7 @@ useEffect(()=>{
   }
 
   const storeSolvedQuestion = async(data: Message) => {
-    const response = await fetch(process.env.APP_URL+'/api/v1/storeSolvedQuestion', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeSolvedQuestion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -185,7 +185,7 @@ useEffect(()=>{
   }
 
   const storeFavoriteAnswer = async(data: Message[]) => {
-    const response = await fetch(process.env.APP_URL+'/api/v1/storeFavoriteAnswer', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeFavoriteAnswer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -197,7 +197,7 @@ useEffect(()=>{
   }
 
   const storeQuestion = async(data: Message[]) => {
-    const response = await fetch(process.env.APP_URL+'/api/v1/storeQuestion', {
+    const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/storeQuestion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -210,7 +210,7 @@ useEffect(()=>{
 
   const getBookmarks = async() => {
 
-	const response = await fetch(process.env.APP_URL+'/api/v1/getBookmarks', {
+	const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/getBookmarks', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
