@@ -28,7 +28,7 @@ const SignUp: NextPage = () => {
 		router.push('/')
 	}
 
-
+	console.log(process.env.NEXT_PUBLIC_CLIENT_SECRET)
 	let canvas: HTMLElement
 	useEffect(() => {
 		if (canvas) return
