@@ -8,7 +8,7 @@ export const authOptions = {
 	  clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET || ""
 	})
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: "zBqqghczsSZh0QOjWWGigl0Zr1OuvnLaeXDbs/iOM3U=",
   callbacks: {
 	async jwt({ token, account }: any) {
 		// Persist the OAuth access_token to the token right after signin
