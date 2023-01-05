@@ -1,5 +1,5 @@
 import { unstable_getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextAuth]"
+import { authOptions } from "./auth/[...nextauth]"
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
