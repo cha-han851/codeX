@@ -8,7 +8,7 @@
       "@/lib/*": ["lib/*"],
       "@/js/*": ["src/js/*"],
       "@/context/*": ["context/*"],
-      "@/layouts/*": ["src/layouts/*"],
+      "@/layouts/*": ["layouts/*"],
       "@/common/*": ["common/*"],
       "@/assets/*": ["src/assets/*"],
     },
