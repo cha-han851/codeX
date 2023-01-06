@@ -11,6 +11,7 @@ import Spline from '@splinetool/react-spline';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
+import { useRive } from '@rive-app/react-canvas';
 
 type userSignUpData = {
 	name: string,
@@ -158,7 +159,12 @@ const SignUp: NextPage = () => {
 
 	}
 
-
+	const { rive, RiveComponent } = useRive({
+		src:"/hogeta.riv",
+		animations: 'Idle',
+		autoplay: true,
+		onLoop: () => {rive?.play('Idle')}
+	  });
   return (
     <>
 	<div className={Styles.container}>
@@ -168,11 +174,14 @@ const SignUp: NextPage = () => {
 		</div>
 		<div className={Styles.sign_up_container}>
 			<div className={Styles.sign_up_form}>
-				<div className={Styles.logo_img_section}><img src="/assets/logo_transparent.png" className={Styles.logo_img}/></div>
-				<TextField className={Styles.input_form} placeholder="氏名" name="name" onChange={handleChange} /> <br/>
+			<RiveComponent
+			onMouseEnter={() => rive && rive.play('Idle')}
+			onMouseLeave={() => rive}
+			/>
+				{/* <TextField className={Styles.input_form} placeholder="氏名" name="name" onChange={handleChange} /> <br/>
 				<TextField className={Styles.input_form} placeholder="メールアドレス" name="email" onChange={handleChange} /><br/>
 				<TextField className={Styles.input_form} placeholder="パスワード" name="password" onChange={handleChange} /><br/>
-				<Button className={Styles.submit_button}variant="outlined" onClick={handleSubmit}>登録する</Button>
+				<Button className={Styles.submit_button}variant="outlined" onClick={handleSubmit}>登録する</Button> */}
 				<Button onClick={() => signIn()}>Google ログイン</Button>
 			</div>
 		</div>
