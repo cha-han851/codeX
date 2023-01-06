@@ -175,7 +175,7 @@ const SignUp: NextPage = () => {
 		<div className={Styles.sign_up_container}>
 			<div className={Styles.sign_up_form}>
 			<RiveComponent
-			onMouseEnter={() => rive && rive.play('Idle')}
+			onMouseEnter={() => rive && rive.play('Jump')}
 			onMouseLeave={() => rive}
 			/>
 				{/* <TextField className={Styles.input_form} placeholder="氏名" name="name" onChange={handleChange} /> <br/>
