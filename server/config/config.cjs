@@ -2,40 +2,22 @@ const fs = require('fs');
 
 module.exports = {
   development: {
-    username: 'tomohiroiwasaki',
-    password: '',
-    database: 'knowledgetank',
-    host: '127.0.0.1',
-    port: 5432,
-    dialect: 'postgres',
-    dialectOptions: {
-      bigNumberStrings: true
-    }
-  },
-  test: {
-    username: process.env.CI_DB_USERNAME,
-    password: process.env.CI_DB_PASSWORD,
-    database: process.env.CI_DB_NAME,
-    host: '127.0.0.1',
-    port: 3306,
-    dialect: 'mysql',
-    dialectOptions: {
-      bigNumberStrings: true
-    }
+    "username": "root",
+    "password": "OTw#}mrq5Br-UR)",
+    "database": "knowledge_tank",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   production: {
-    username: process.env.PROD_DB_USERNAME,
-    password: process.env.PROD_DB_PASSWORD,
-    database: process.env.PROD_DB_NAME,
-    host: process.env.PROD_DB_HOSTNAME,
-    port: process.env.PROD_DB_PORT,
+    "use_env_variable": 'DB_CONNECTION_URI',
     dialect: 'postgres',
     dialectOptions: {
       bigNumberStrings: true,
       ssl: {
         require: 'true'
       }
-    }
+    },
+    dialect: 'postgres'
   }
 };
 
