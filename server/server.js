@@ -256,6 +256,21 @@ app.post('/api/v1/searchQuestions', async(req, res)=> {
 	}
 });
 
+app.get('/api/v1/getAllQuestions', async(req, res)=> {
+	try {
+		const userId = req.body.userId;
+		const questions = await db.Question.findAll()
+		let data = []
+		for(var i = 0; i < questions.length; i++) {
+			data.push( JSON.parse(JSON.stringify(questions[i])))
+		}
+		res.status(200).json({questions});
+	} catch (error) {
+		console.log(error);
+		res.status(500).send({ error });
+	}
+});
+
 
 
 app.listen(5001, () => console.log('server is running'))
