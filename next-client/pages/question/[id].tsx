@@ -78,7 +78,6 @@ const Home: NextPage = ({question, answer}:any) => {
     let interval = setInterval(() => {
       if (index < text.value.length) {
         message += text.value.charAt(index);
-        console.log(text)
         setMessages([...messages, {userId: session!.user!.id!, isAi:true, value: message, uniqueId: text.uniqueId, isFavorite: false, isSolved: false}])
         index++
       } else {
@@ -188,7 +187,7 @@ const Home: NextPage = ({question, answer}:any) => {
       })
     })
   }
-
+  console.log(answer)
   const getSolvedQuestions = async() => {
 
 	const response = await fetch(process.env.NEXT_PUBLIC_APP_URL+'/api/v1/getBookmarks', {
@@ -201,7 +200,6 @@ const Home: NextPage = ({question, answer}:any) => {
 		})
 	  })
 	  const data = await response.json()
-	  console.log(data.bookmarks)
   }
   return (
     <>
@@ -217,6 +215,9 @@ const Home: NextPage = ({question, answer}:any) => {
                       src={user}
                     />
                 </div>
+
+
+
               </div>
 
               <div className={Styles.message}>
@@ -234,6 +235,16 @@ const Home: NextPage = ({question, answer}:any) => {
                       src={bot}
                     />
                 </div>
+                {
+                  answer.isFavorite == false ? <IconButton color="primary" aria-label="upload picture" component="label" >
+                    <BookmarkAddOutlinedIcon  color="action" sx={{color: 'white'}}/>
+                  </IconButton>: ''
+                }
+                {
+                  answer.isFavorite == true ? <IconButton color="primary" aria-label="upload picture" component="label">
+                    <BookmarkIcon  color="action" sx={{color: 'yellow'}}/>
+                  </IconButton>: ''
+                }
               </div>
 
               <div className={Styles.message}>

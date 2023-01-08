@@ -177,12 +177,13 @@ const SignUp: NextPage = () => {
 			<RiveComponent
 			onMouseEnter={() => rive && rive.play('Jump')}
 			onMouseLeave={() => rive}
+			className={Styles.rive}
 			/>
 				{/* <TextField className={Styles.input_form} placeholder="氏名" name="name" onChange={handleChange} /> <br/>
 				<TextField className={Styles.input_form} placeholder="メールアドレス" name="email" onChange={handleChange} /><br/>
 				<TextField className={Styles.input_form} placeholder="パスワード" name="password" onChange={handleChange} /><br/>
 				<Button className={Styles.submit_button}variant="outlined" onClick={handleSubmit}>登録する</Button> */}
-				<Button onClick={() => signIn()}>Google ログイン</Button>
+				<Button variant='outlined' onClick={() => signIn()}>Google ログイン</Button>
 			</div>
 		</div>
 	</div>

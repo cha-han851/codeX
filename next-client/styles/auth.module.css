@@ -35,23 +35,30 @@
 .model_section {
 	height: 80%;
 	width: 100%;
-	padding: 30px;
 
 }
 
 #canvas {
-	height: 80% !important;
-
-
+	height: 50% !important;
+}
+.rive {
+	width:100% !important;
+	height: 60%;
+}
+.rive canvas{
+	width: 100% !important;
+	height: 50%;
 }
 
 .sign_up_container {
 	width: 40%;
 	height: 80%;
-	padding-top: 30px;
+	margin-top: 30px;
 	display: flex;
 	justify-content: center;
+	background-color: rgba(240, 248, 255, 0.645);
 }
+
 
 .sign_up_form {
 	width: 80%;
@@ -59,7 +66,8 @@
 	/* margin: 40px; */
 	padding: 20px;
 	border-radius: 15px;
-	background-color: rgba(240, 248, 255, 0.645);
+
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
